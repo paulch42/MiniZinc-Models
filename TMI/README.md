@@ -91,8 +91,7 @@ The model is implemented by [tmiB1.mzn](tmiB1.mzn) and its characteristic is exe
 - the TMI period;
 - the flight takeoff window;
 - the runways available in the TMI;
-- the runways the flight can use;
-- .
+- the runways the flight can use.
 
 The granularity is one minute. That is, every minute is considered a potential slot time for a flight. 
 
