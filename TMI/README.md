@@ -103,6 +103,8 @@ The output is pretty-printed by Python.
 
 Data files [tmiB1-1.dzn](data/tmiB1-1.dzn) and [tmiB1-2.dzn](data/tmiB1-2.dzn) are example inputs that can be run from the command line or IDE, hence are equivalent to the data [tmiB1.py](tmiB1.py) generates and feeds to the [MiniZinc Python](https://pypi.org/project/minizinc/) interface, demonstrating how the table of candidates is constructed.
 
+Note rows of the form `2, -1, -1` in which the runway and slot time are `-1`. These rows represent dummy slots that can be allocated to non-priority flights. No such entry exists for a priority flight, hence a priority flight must be allocated an actual slot.
+
 Example output for [tmi4](data/tmi4):
 ```
 TMI Schedule for YSSY on 2026-03-25
@@ -192,3 +194,5 @@ The table below is a performance comparison of model B2 with different window re
 The results clearly demonstrate the effect the window size has on performance and quality of solution:
 - Increased window size has a negative impact on performance reflecting the increased search space.
 - Quality increases with increased window size reflecting that more candidate solutions are available for selection.
+
+The fact that an optimal solution is achieved with a 70% reduction is a consequnce of the input data. Different input data could result in a somewhat different result (at the extreme, an optimal solution may only be achieved with 0% reduction).
